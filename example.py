@@ -28,7 +28,7 @@ def index():
     )
 
 
-@app.post('/')
+@app.route('/', methods=['POST'])
 def auth_post():
     args = request.form.to_dict()
     session['login'] = args['login']
@@ -60,7 +60,7 @@ def users(id):
     )
 
 
-@app.get('/users')
+@app.route('/users', methods=['GET'])
 def users_get():
     check_login()
     messages = get_flashed_messages(with_categories=True)
@@ -84,7 +84,7 @@ def users_get():
     )
 
 
-@app.post('/users')
+@app.route('/users', methods=['POST'])
 def users_post():
     user = request.form.to_dict()
     errors = validate(user)
