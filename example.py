@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 
 
 @app.route('/')
-def main():
+def index():
     errors = {}
     login = ''
     return render_template(
@@ -39,7 +39,7 @@ def auth_post():
 @app.route('/logout')
 def logout():
     session.pop('login', None)
-    return redirect(url_for('main'))
+    return redirect(url_for('index'))
 
 
 @app.route('/users/<id>')
@@ -215,4 +215,4 @@ def get_new_id():
 
 
 if __name__ == '__main__':
-    main()
+    app.run(host='0.0.0.0', port=5000, debug=True)
