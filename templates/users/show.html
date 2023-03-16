@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>User data</title>
+    </head>
+    <a href="{{url_for('users_get')}}">All users</a>
+    <br>
+    <h4>User data</h4>
+    <br>
+    <br>
+    <body>
+        <div>id = {{user.id}}</div>
+        <br>
+        <div>nickname = {{user.name}}</div>
+        <br>
+        <div>email = {{user.email}}</div>
+    </body>
+</html>

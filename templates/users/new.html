@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>New user</title>
+    </head>
+    <a href="{{url_for('users_get')}}">All users</a>
+    <br>
+    <form action="/users" method="post">
+      <div>
+        <label>
+          Nickname
+          <input type="text" required name="name" value="{{ user.name }}">
+        </label>
+        {% if errors['name'] %}
+          <div>{{ errors['name'] }}</div>
+        {% endif %}
+      </div>
+      <br>
+      <br>
+      <div>
+        <label>
+          Email
+          <input type="email" required name="email" value="{{ user.email }}">
+        </label>
+        {% if errors['email'] %}
+          <div>{{ errors['email'] }}</div>
+        {% endif %}
+      </div>
+      <br>
+      <br>
+      <input type="submit" value="Sign Up">
+    </form>
+</html>

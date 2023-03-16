@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Welcome to HEXLET!!!</title>
+    </head>
+    <br>
+    <form action="/" method="post">
+      <div>
+        <label>
+          Login
+          <input type="text" required name="login" value="{{ login }}">
+        </label>
+        {% if errors['login'] %}
+          <div>{{ errors['login'] }}</div>
+        {% endif %}
+      </div>
+      <input type="submit" value="Log in">
+    </form>
+</html>
